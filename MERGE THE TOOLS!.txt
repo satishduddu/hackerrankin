@@ -1,0 +1,15 @@
+def merge_the_tools(s, k):
+    # Iterate over the string in chunks of size k
+    for i in range(0, len(s), k):
+        # Create a set of unique characters in the chunk, in the order they appear
+        t = []
+        for c in s[i:i+k]:
+            if c not in t:
+                t.append(c)
+        # Print the resulting string
+        print(''.join(t))
+
+
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)

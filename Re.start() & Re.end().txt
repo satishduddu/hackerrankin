@@ -1,0 +1,15 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+s = input().strip()
+k = input().strip()
+
+pattern = re.compile('(?=(' + k + '))')
+
+matches = [(match.start(), match.start() + len(k) - 1) for match in pattern.finditer(s)]
+
+if matches:
+    for match in matches:
+        print(match)
+else:
+    print((-1, -1))

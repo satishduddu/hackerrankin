@@ -1,0 +1,16 @@
+n = int(input())
+scores = list(map(int, input().split()))
+
+# create a set of unique scores
+unique_scores = set(scores)
+
+# find the maximum score
+max_score = max(unique_scores)
+
+# remove the maximum score from the set
+unique_scores.remove(max_score)
+
+# find the maximum score again, which will be the runner-up score
+runner_up_score = max(unique_scores)
+
+print(runner_up_score)

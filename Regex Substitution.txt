@@ -1,0 +1,18 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+n = int(input())
+lines = []
+for _ in range(n):
+    lines.append(input())
+
+# replace '&&' with 'and'
+for i in range(n):
+    lines[i] = re.sub(r'(?<= )&&(?= )', 'and', lines[i])
+
+# replace '||' with 'or'
+for i in range(n):
+    lines[i] = re.sub(r'(?<= )\|\|(?= )', 'or', lines[i])
+
+# print the modified text
+print('\n'.join(lines))

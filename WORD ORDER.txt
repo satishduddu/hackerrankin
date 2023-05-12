@@ -1,0 +1,21 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n = int(input())
+
+# dictionary to keep track of word frequencies
+freq = {}
+
+# process input words
+for i in range(n):
+    word = input().strip()
+    if word in freq:
+        freq[word] += 1
+    else:
+        freq[word] = 1
+
+# output distinct word count
+print(len(freq))
+
+# output word frequencies in order of appearance in input
+for word in freq:
+    print(freq[word], end=' ')
+print()
